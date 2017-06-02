@@ -1,0 +1,24 @@
+dpdk-pktgen编译部署及使用（pktgen-3.2.11.tar.gz为例）
+
+#tar -xzvf pktgen-3.2.11.tar.gz
+#cd cd pktgen-3.2.11
+#export RTE_SDK=/usr/local/share/dpdk/
+#make
+#cd  app
+#make
+
+#cd ../test/
+#vi set_seq.cmd
+#保存
+#cd ../
+#./app/build/pktgen -c f -n 4 -- -p 0x3 -P -m "1.0" -f test/set_seq.cmd
+
+-m "2.0, 3.1"   这是指一个矩阵模型，2.0  是指，在2号lcore上绑定的端口0 ，  3.1  是指在 lcore3 上绑定端口1,上面只有一个端口，让1号lcore绑定端口0
+-f test/set_seq.cmd  最后导入pktgen的执行配置文件；在执行pktgen时，利用配置产生数据包；
+
+
+
+Pktgen:/> start 0 #端口0开始发包
+Pktgen:/> stop 0 #端口0停止发包
+Pktgen:/> quit
+
