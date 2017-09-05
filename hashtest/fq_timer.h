@@ -1,7 +1,4 @@
 
-/*
-*create by qinghua
-*/
 #ifndef _QSTACK_DPDK_TIMER_H_
 #define _QSTACK_DPDK_TIMER_H_
 
